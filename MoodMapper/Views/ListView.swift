@@ -9,13 +9,30 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack {
+                Text("How do you feel?")
+                
+                HStack{
+                    TextField("Emoji", text: Binding.constant(""))
+                        .frame(width: 50, height: 60)
+                    
+                    TextField("Insert feeling", text: Binding.constant(""))
+                    
+                    Button(action :{
+                        
+                    }, label : {
+                        Text("ADD")
+                            .font(.caption)
+                    })
+                }
+                
+                
+            }
+            .padding()
+            
+            .navigationTitle("Mood Mapper")
         }
-        .padding()
     }
 }
 
