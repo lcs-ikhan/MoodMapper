@@ -11,6 +11,7 @@
 		85068BB529DF153500B49D5C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85068BB429DF153500B49D5C /* ListView.swift */; };
 		85068BB729DF153F00B49D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85068BB629DF153F00B49D5C /* Assets.xcassets */; };
 		85068BBA29DF153F00B49D5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85068BB929DF153F00B49D5C /* Preview Assets.xcassets */; };
+		85068BC329E7138800B49D5C /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85068BC229E7138800B49D5C /* Feeling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		85068BB429DF153500B49D5C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		85068BB629DF153F00B49D5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85068BB929DF153F00B49D5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85068BC229E7138800B49D5C /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		85068BC029DF163400B49D5C /* Modles */ = {
 			isa = PBXGroup;
 			children = (
+				85068BC229E7138800B49D5C /* Feeling.swift */,
 			);
 			path = Modles;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85068BC329E7138800B49D5C /* Feeling.swift in Sources */,
 				85068BB529DF153500B49D5C /* ListView.swift in Sources */,
 				85068BB329DF153500B49D5C /* MoodMapperApp.swift in Sources */,
 			);
