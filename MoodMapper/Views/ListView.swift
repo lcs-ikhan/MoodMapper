@@ -27,7 +27,14 @@ struct ListView: View {
                     })
                 }
                 
-                
+                List (existingFeelings){ currentFeeling in
+                    
+                    HStack{
+                        Text(currentFeeling.emoji)
+                        Text(currentFeeling.description)
+                    }
+                    
+                }
             }
             .padding()
             
