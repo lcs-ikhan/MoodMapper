@@ -8,18 +8,41 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @State var feelings: [Feeling] = existingFeelings
+    
+    @State var newEmoji: String = ""
+    
+    @State var newDescription: String = ""
     var body: some View {
         NavigationView{
             VStack {
                 Text("How do you feel?")
                 
                 HStack{
-                    TextField("Emoji", text: Binding.constant(""))
+                    TextField("Emoji", text: $newEmoji)
                         .frame(width: 50, height: 60)
                     
-                    TextField("Insert feeling", text: Binding.constant(""))
+                    TextField("Insert feeling", text: $newDescription)
                     
                     Button(action :{
+                        
+                        // Get last todo item id
+                        let lastId = feelings.last!.id
+                        
+                        // Create new todo item id
+                        let newId = lastId + 1
+                        
+                        // Create the new todo item
+                        let newFeeling =  Feeling(id: newId, emoji: newEmoji, description: newDescription)
+                        
+                        // Add the new to-do item to the list
+                        feelings.append(newFeeling)
+                        
+                        // Clear the input field
+                        newEmoji = ""
+                        
+                        newDescription = ""
                         
                     }, label : {
                         Text("ADD")
@@ -27,7 +50,7 @@ struct ListView: View {
                     })
                 }
                 
-                List (existingFeelings){ currentFeeling in
+                List (feelings){ currentFeeling in   
                     
                     HStack{
                         Text(currentFeeling.emoji)
