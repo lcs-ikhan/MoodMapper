@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ListView: View {
     
+    // Access the connection to the database (needed to add a new record)
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     
     @BlackbirdLiveModels({ db in
         try await Feeling.read(from: db)
@@ -31,22 +33,20 @@ struct ListView: View {
                     
                     Button(action :{
                         
-//                        // Get last todo item id
-//                        let lastId = feelings.last!.id
-//
-//                        // Create new todo item id
-//                        let newId = lastId + 1
-//
-//                        // Create the new todo item
-//                        let newFeeling =  Feeling(id: newId, emoji: newEmoji, description: newDescription)
-//
-//                        // Add the new to-do item to the list
-//                        feelings.append(newFeeling)
-//
-//                        // Clear the input field
-//                        newEmoji = ""
-//
-//                        newDescription = ""
+                        Task {
+                            // Write to database
+                            try await db!.transaction { core in
+                                
+                                try core.query("INSERT INTO Feeling (emoji) VALUES (?)", newEmoji)
+                                
+                                try core.query("INSERT INTO Feeling (description) VALUES (?)", newDescription)
+                            }
+                            
+                            // Clear the input field
+                            newEmoji = ""
+                            
+                            newDescription = ""
+                        }
                         
                     }, label : {
                         Text("ADD")
