@@ -37,9 +37,9 @@ struct ListView: View {
                             // Write to database
                             try await db!.transaction { core in
                                 
-                                try core.query("INSERT INTO Feeling (emoji) VALUES (?)", newEmoji)
+                                try core.query("INSERT INTO Feeling (emoji, description) VALUES (?, ?)", newEmoji, newDescription)
                                 
-                                try core.query("INSERT INTO Feeling (description) VALUES (?)", newDescription)
+                                
                             }
                             
                             // Clear the input field
