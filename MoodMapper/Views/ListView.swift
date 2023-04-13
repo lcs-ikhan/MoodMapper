@@ -5,11 +5,15 @@
 //  Created by Isaad Khan on 2023-04-06.
 //
 
+import Blackbird
 import SwiftUI
 
 struct ListView: View {
     
-    @State var feelings: [Feeling] = existingFeelings
+    
+    @BlackbirdLiveModels({ db in
+        try await Feeling.read(from: db)
+    }) var feelings
     
     @State var newEmoji: String = ""
     
@@ -27,22 +31,22 @@ struct ListView: View {
                     
                     Button(action :{
                         
-                        // Get last todo item id
-                        let lastId = feelings.last!.id
-                        
-                        // Create new todo item id
-                        let newId = lastId + 1
-                        
-                        // Create the new todo item
-                        let newFeeling =  Feeling(id: newId, emoji: newEmoji, description: newDescription)
-                        
-                        // Add the new to-do item to the list
-                        feelings.append(newFeeling)
-                        
-                        // Clear the input field
-                        newEmoji = ""
-                        
-                        newDescription = ""
+//                        // Get last todo item id
+//                        let lastId = feelings.last!.id
+//
+//                        // Create new todo item id
+//                        let newId = lastId + 1
+//
+//                        // Create the new todo item
+//                        let newFeeling =  Feeling(id: newId, emoji: newEmoji, description: newDescription)
+//
+//                        // Add the new to-do item to the list
+//                        feelings.append(newFeeling)
+//
+//                        // Clear the input field
+//                        newEmoji = ""
+//
+//                        newDescription = ""
                         
                     }, label : {
                         Text("ADD")
@@ -50,7 +54,7 @@ struct ListView: View {
                     })
                 }
                 
-                List (feelings){ currentFeeling in   
+                List (feelings.results){ currentFeeling in
                     
                     HStack{
                         Text(currentFeeling.emoji)

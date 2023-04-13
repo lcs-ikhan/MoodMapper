@@ -59,8 +59,8 @@
 		85068BB129DF153500B49D5C /* MoodMapper */ = {
 			isa = PBXGroup;
 			children = (
-				85068BCB29E833B100B49D5C /* Helpers */,
 				85068BB229DF153500B49D5C /* MoodMapperApp.swift */,
+				85068BCB29E833B100B49D5C /* Helpers */,
 				85068BC029DF163400B49D5C /* Modles */,
 				85068BC129DF163B00B49D5C /* Views */,
 				85068BB629DF153F00B49D5C /* Assets.xcassets */,
