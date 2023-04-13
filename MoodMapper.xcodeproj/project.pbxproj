@@ -14,6 +14,7 @@
 		85068BC329E7138800B49D5C /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85068BC229E7138800B49D5C /* Feeling.swift */; };
 		85068BC729E8333E00B49D5C /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 85068BC629E8333E00B49D5C /* db.sqlite */; };
 		85068BCA29E8338400B49D5C /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 85068BC929E8338400B49D5C /* Blackbird */; };
+		85068BCD29E833CE00B49D5C /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85068BCC29E833CE00B49D5C /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		85068BB929DF153F00B49D5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85068BC229E7138800B49D5C /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		85068BC629E8333E00B49D5C /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		85068BCC29E833CE00B49D5C /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		85068BB129DF153500B49D5C /* MoodMapper */ = {
 			isa = PBXGroup;
 			children = (
+				85068BCB29E833B100B49D5C /* Helpers */,
 				85068BB229DF153500B49D5C /* MoodMapperApp.swift */,
 				85068BC029DF163400B49D5C /* Modles */,
 				85068BC129DF163B00B49D5C /* Views */,
@@ -89,6 +92,14 @@
 				85068BB429DF153500B49D5C /* ListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		85068BCB29E833B100B49D5C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85068BCC29E833CE00B49D5C /* AppDatabase.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 			files = (
 				85068BC329E7138800B49D5C /* Feeling.swift in Sources */,
 				85068BB529DF153500B49D5C /* ListView.swift in Sources */,
+				85068BCD29E833CE00B49D5C /* AppDatabase.swift in Sources */,
 				85068BB329DF153500B49D5C /* MoodMapperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
