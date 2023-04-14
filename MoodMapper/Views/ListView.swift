@@ -27,6 +27,7 @@ struct ListView: View {
                 
                 HStack{
                     TextField("Emoji", text: $newEmoji)
+                        .font(.title)
                         .frame(width: 50, height: 60)
                     
                     TextField("Insert feeling", text: $newDescription)
