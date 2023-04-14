@@ -64,6 +64,7 @@ struct ListView: View {
                         }
                         
                     }
+                    .onDelete(perform: removeRows)
                     
                 }
                 
@@ -71,6 +72,29 @@ struct ListView: View {
             .padding()
             
             .navigationTitle("Mood Mapper")
+        }
+    }
+    
+    func removeRows(at offsets: IndexSet) {
+        
+        Task{
+            
+            try await db!.transaction { core in
+                
+                // Get the ID of the item to be deleted
+                var idList = ""
+                for offset in offsets {
+                    idList += "\(feelings.results[offset].id),"
+                }
+                
+                //Remove the final comma
+                print(idList)
+                idList.removeLast()
+                print(idList)
+                
+                // Delete the row(s) from the database
+                try core.query("DELETE FROM Feeling WHERE id IN (?)", idList)
+            }
         }
     }
 }
