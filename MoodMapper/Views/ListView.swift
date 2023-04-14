@@ -54,15 +54,19 @@ struct ListView: View {
                             .font(.caption)
                     })
                 }
-                
-                List (feelings.results){ currentFeeling in
+                List{
                     
-                    HStack{
-                        Text(currentFeeling.emoji)
-                        Text(currentFeeling.description)
+                    ForEach(feelings.results){ currentFeeling in
+                        
+                        HStack{
+                            Text(currentFeeling.emoji)
+                            Text(currentFeeling.description)
+                        }
+                        
                     }
                     
                 }
+                
             }
             .padding()
             
